@@ -10,9 +10,21 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Stylix
+    stylix = {
+      url = "github:nix-community/stylix/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      stylix,
+      ...
+    }@inputs:
     let
       systemSettings = {
         system = "x86_64-linux"; # Your architecture
@@ -23,39 +35,35 @@
       };
 
       userSettings = {
-        username = "dire";  
+        username = "dire";
         name = "Direwolfesp";
         email = "alvarolg365@gmail.com";
         term = "ghostty";
         editor = "helix";
       };
 
-    in {
-    
-    nixosConfigurations.${systemSettings.hostname} = nixpkgs.lib.nixosSystem {
-      system =  systemSettings.system;
+    in
+    {
+      nixosConfigurations.${systemSettings.hostname} = nixpkgs.lib.nixosSystem rec {
+        system = systemSettings.system;
 
-      modules = [
-        ./hosts/${systemSettings.host}/configuration.nix
-      ];
+        modules = [
+          ./hosts/${systemSettings.host}/configuration.nix
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${userSettings.username}.imports = [ ./home-manager/home.nix ];
+            home-manager.extraSpecialArgs = specialArgs;
+          }
+        ];
 
-      specialArgs = {
-        # pass config variables
-        inherit systemSettings;
-        inherit userSettings;
+        specialArgs = {
+          # pass config variables
+          inherit systemSettings;
+          inherit userSettings;
+        };
       };
     };
-
-    homeConfigurations.${systemSettings.hostname} = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${systemSettings.system};
-
-      modules = [ ./home-manager/home.nix ];
-
-      extraSpecialArgs = {
-        # pass config variables
-        inherit systemSettings;
-        inherit userSettings;
-      };     
-    };
-  };
 }

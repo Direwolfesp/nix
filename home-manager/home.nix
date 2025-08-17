@@ -1,11 +1,17 @@
-{ config, pkgs, userSettings, ... }:
+{
+  config,
+  pkgs,
+  systemSettings,
+  userSettings,
+  ...
+}:
 {
   imports = [
     ./modules
     ./home-packages.nix
   ];
 
-  home =  {
+  home = {
     username = userSettings.username;
     homeDirectory = "/home/${userSettings.username}";
     stateVersion = "25.05";
