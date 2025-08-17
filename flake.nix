@@ -38,8 +38,8 @@
         username = "dire";
         name = "Direwolfesp";
         email = "alvarolg365@gmail.com";
-        term = "ghostty";
-        editor = "helix";
+        # term = "ghostty"; # TODO: make them useful, or
+        # editor = "helix"; # replace them
       };
 
     in

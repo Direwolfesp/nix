@@ -45,9 +45,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Install packages
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -61,5 +58,4 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
 }
