@@ -1,15 +1,33 @@
-{ userSettings, ... }:
 {
-  programs.jujutsu = {
-    enable = true;
+  input,
+  lib,
+  config,
+  pkgs,
+  userSettings,
+  ...
+}:
+let
+  cfg = config.modules.jujutsu;
+in
+{
+  options = {
+    modules.jujutsu.enable = lib.mkEnableOption "jujutsu";
+  };
 
-    settings = {
-      ui.default-command = "log";
+  config = lib.mkIf cfg.enable {
+    programs.jujutsu = {
+      enable = true;
 
-      user = {
-        email = userSettings.email;
-        name = userSettings.name;
+      settings = {
+        ui.default-command = "log";
+
+        user = {
+          email = userSettings.email;
+          name = userSettings.name;
+        };
       };
     };
+
   };
+
 }

@@ -1,11 +1,19 @@
-  {
-    # enable flakes
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+{
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [
+        # enable flakes
+        "nix-command"
+        "flakes"
+      ];
+    };
 
-    # garbage collection
-    nix.gc = {
+    gc = {
+      # garbage collection
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 15d";
     };
-  }
+  };
+}

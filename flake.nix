@@ -38,6 +38,7 @@
         username = "dire";
         name = "Direwolfesp";
         email = "alvarolg365@gmail.com";
+        shell = "nushell"; # Same name as in pkgs
         # term = "ghostty"; # TODO: make them useful, or
         # editor = "helix"; # replace them
       };
