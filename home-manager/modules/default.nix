@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  userSettings,
+  ...
+}:
 {
   imports = [
     ./firefox.nix
@@ -6,8 +11,9 @@
     ./git.nix
     ./helix.nix
     ./jj.nix
-    ./sioyek.nix
     ./nixcord.nix
+    ./sioyek.nix
+    ./shell # loads => ./shell/default.nix
   ];
 
   # NOTE: here we can enable/disable each application
@@ -17,6 +23,6 @@
   config.modules.git.enable = true;
   config.modules.helix.enable = true;
   config.modules.jujutsu.enable = true;
-  config.modules.sioyek.enable = true;
   config.modules.nixcord.enable = true;
+  config.modules.sioyek.enable = true;
 }

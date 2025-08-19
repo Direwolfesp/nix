@@ -45,8 +45,8 @@
         name = "Direwolfesp";
         email = "alvarolg365@gmail.com";
         shell = "nushell"; # Same name as in pkgs
+        editor = "helix"; # replace them
         # term = "ghostty"; # TODO: make them useful, or
-        # editor = "helix"; # replace them
       };
 
     in
@@ -59,6 +59,7 @@
           stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
           {
+            home-manager.backupFileExtension = "backup";
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.${userSettings.username}.imports = [ ./home-manager/home.nix ];

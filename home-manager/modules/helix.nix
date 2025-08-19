@@ -3,6 +3,7 @@
   lib,
   config,
   pkgs,
+  userSettings,
   ...
 }:
 let
@@ -16,7 +17,7 @@ in
   config = lib.mkIf cfg.enable {
     programs.helix = {
       enable = true;
-      defaultEditor = true;
+      defaultEditor = userSettings.editor == "helix";
 
       settings = {
         # Theming
