@@ -16,6 +16,12 @@
       url = "github:nix-community/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Nixcord
+    nixcord = {
+      url = "github:kaylorben/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -57,6 +63,9 @@
             home-manager.useUserPackages = true;
             home-manager.users.${userSettings.username}.imports = [ ./home-manager/home.nix ];
             home-manager.extraSpecialArgs = specialArgs;
+            home-manager.sharedModules = [
+              inputs.nixcord.homeModules.nixcord
+            ];
           }
         ];
 

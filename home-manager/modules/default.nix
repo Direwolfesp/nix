@@ -7,6 +7,7 @@
     ./helix.nix
     ./jj.nix
     ./sioyek.nix
+    ./nixcord.nix
   ];
 
   # NOTE: here we can enable/disable each application
@@ -17,4 +18,5 @@
   config.modules.helix.enable = true;
   config.modules.jujutsu.enable = true;
   config.modules.sioyek.enable = true;
+  config.modules.nixcord.enable = true;
 }
