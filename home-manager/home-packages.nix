@@ -4,6 +4,7 @@
   # the rest are either managed by home-manager program.enable option
   # or if they are system packages.
   home.packages = with pkgs; [
+    # CLI
     fastfetch
     fzf
     jq
@@ -15,5 +16,8 @@
     tokei
     tealdeer
     eza
+
+    # GUI
+    youtube-music
   ];
 }

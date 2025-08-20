@@ -7,8 +7,13 @@
   ...
 }:
 let
-  editorPkg = pkgs.${userSettings.editor};
   cfg = config.modules.nushell;
+
+  editorPkg =
+    if pkgs ? "${userSettings.editor}" then
+      pkgs.${userSettings.editor}
+    else
+      throw "Provided editor '${userSettings.editor}' not found in nixpkgs.";
 in
 {
   options = {
@@ -28,7 +33,7 @@ in
         # TODO: continue with keybindings and menus
       };
 
-      # specific aliases for nushell only
+      # specific aliases for nushell
       shellAliases = {
         fg = "job unfreeze";
         "job killall" = "do { job list | each { |j| job kill $j.id } }";

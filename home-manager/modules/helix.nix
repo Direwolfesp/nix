@@ -17,7 +17,6 @@ in
   config = lib.mkIf cfg.enable {
     programs.helix = {
       enable = true;
-      defaultEditor = userSettings.editor == "helix";
 
       settings = {
         # Theming

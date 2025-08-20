@@ -14,7 +14,7 @@
     ./nixcord.nix
     ./sioyek.nix
     ./shell # loads => ./shell/default.nix
-    ./xdg-mime.nix
+    ./xdg.nix
     ./mpv.nix
   ];
 
@@ -27,6 +27,6 @@
   config.modules.jujutsu.enable = true;
   config.modules.nixcord.enable = true;
   config.modules.sioyek.enable = true;
-  config.modules.xdg-mime.enable = true;
+  config.modules.xdg.enable = true;
   config.modules.mpv.enable = true;
 }
