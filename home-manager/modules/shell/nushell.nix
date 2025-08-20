@@ -24,9 +24,7 @@ in
         completions.algorithm = "fuzzy";
         highlight_resolved_externals = true;
         edit_mode = "vi";
-        buffer_editor = # use the editor specified in flake.nix if possible
-          if editorPkg ? meta.mainProgram then editorPkg.meta.mainProgram else userSettings.editor;
-
+        buffer_editor = lib.getExe editorPkg;
         # TODO: continue with keybindings and menus
       };
 
