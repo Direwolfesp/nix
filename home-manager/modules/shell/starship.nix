@@ -17,6 +17,7 @@ in
     programs.starship = {
       enable = true;
       enableNushellIntegration = true;
+      enableBashIntegration = true;
     };
   };
 }

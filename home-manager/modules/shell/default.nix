@@ -13,6 +13,7 @@
     ./starship.nix
     ./yazi.nix
     ./zoxide.nix
+    ./bash.nix
   ];
 
   config.modules.carapace.enable = true;
@@ -20,4 +21,5 @@
   config.modules.starship.enable = true;
   config.modules.yazi.enable = true;
   config.modules.zoxide.enable = true;
+  config.modules.bash.enable = true;
 }

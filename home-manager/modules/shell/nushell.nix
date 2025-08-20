@@ -28,11 +28,8 @@ in
         # TODO: continue with keybindings and menus
       };
 
+      # specific aliases for nushell only
       shellAliases = {
-        ll = "ls -l";
-        zlj = "zellij";
-        zbr = "zig build run";
-        zrf = "zellij run -f --"; # zellij run in floating mode
         fg = "job unfreeze";
         "job killall" = "do { job list | each { |j| job kill $j.id } }";
         cal = "cal --week-start mo";

@@ -20,6 +20,7 @@ in
     programs.yazi = {
       enable = true;
       enableNushellIntegration = true;
+      enableBashIntegration = true;
       shellWrapperName = "y";
 
       plugins = {
