@@ -6,6 +6,7 @@
   pkgs,
   systemSettings,
   userSettings,
+  lib,
   ...
 }:
 {
@@ -23,27 +24,28 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # X11
+  services.xserver = {
+    enable = true; # Enable the X11 windowing system.
+    displayManager.lightdm.enable = true;
+    desktopManager.xfce.enable = true; # Enable the XFCE Desktop Environment.
 
-  # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "es";
-    variant = "nodeadkeys";
+    # keymap
+    xkb = {
+      layout = "es";
+      variant = "nodeadkeys";
+      options = lib.mkForce "caps:swapescape"; # swap
+    };
   };
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.libinput.enable = true;
 
   # Configure console keymap
   console.keyMap = "es";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

@@ -40,6 +40,11 @@ in
       userDirs.templates = "${homeDir}/Templates";
       userDirs.videos = "${homeDir}/Videos";
 
+      portal = {
+        enable = true;
+        extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
+      };
+
       # manages mimeapps.list
       mimeApps = {
         enable = true;

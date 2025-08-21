@@ -1,12 +1,13 @@
 { ... }:
 {
   imports = [
+    ./audio.nix
+    ./boot.nix
+    ./fonts.nix
+    ./hyprland.nix
     ./networking.nix
     ./nix.nix
-    ./fonts.nix
-    ./audio.nix
     ./timezone-locale.nix
-    ./boot.nix
     ./user.nix
   ];
 }

@@ -10,12 +10,13 @@
     ./ghostty.nix
     ./git.nix
     ./helix.nix
+    ./hypr # loads => ./hypr/default.nix
     ./jj.nix
-    ./nixcord.nix
-    ./sioyek.nix
-    ./shell # loads => ./shell/default.nix
-    ./xdg.nix
     ./mpv.nix
+    ./nixcord.nix
+    ./shell # loads => ./shell/default.nix
+    ./sioyek.nix
+    ./xdg.nix
   ];
 
   # NOTE: here we can enable/disable each application
@@ -25,8 +26,8 @@
   config.modules.git.enable = true;
   config.modules.helix.enable = true;
   config.modules.jujutsu.enable = true;
+  config.modules.mpv.enable = true;
   config.modules.nixcord.enable = true;
   config.modules.sioyek.enable = true;
   config.modules.xdg.enable = true;
-  config.modules.mpv.enable = true;
 }

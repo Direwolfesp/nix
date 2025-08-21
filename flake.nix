@@ -46,7 +46,7 @@
         email = "alvarolg365@gmail.com";
         shell = "nushell"; # Default shell, same name as in pkgs
         editor = "helix"; # Default editor, same name as in pkgs
-        # term = "ghostty"; # TODO: make it useful
+        term = "ghostty"; # Default terminal, same name as in pkgs
       };
 
     in
