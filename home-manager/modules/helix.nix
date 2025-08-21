@@ -33,7 +33,8 @@ in
           completion-trigger-len = 1; # fast autocomplete
           completion-replace = true; # replace the whole word
           idle-timeout = 10; # make everything a lil faster
-          auto-info = true; # i dont need the popups
+          auto-info = true; # menu popups
+          indent-guides.render = false; # view indentations
 
           # the best shell
           shell = [
@@ -57,7 +58,7 @@ in
           lsp.snippets = true;
 
           inline-diagnostics = {
-            # add lines to view indentations
+            # show errors inline
             cursor-line = "error";
           };
 
