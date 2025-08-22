@@ -9,6 +9,7 @@ let
   cfg = config.modules.xdg;
 
   # Default apps .desktop (user packages are in /etc/profiles/per-user/<user>/share/applications)
+  # TODO: syncronize it with userSettings
   browser = "firefox.desktop";
   editor = "Helix.desktop";
   video = "mpv.desktop";

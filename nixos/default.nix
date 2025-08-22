@@ -9,5 +9,6 @@
     ./nix.nix
     ./timezone-locale.nix
     ./user.nix
+    ./stylix.nix
   ];
 }

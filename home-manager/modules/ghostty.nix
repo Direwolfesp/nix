@@ -17,15 +17,13 @@ in
     programs.ghostty = {
       enable = true;
       settings = {
-        # NOTE: i want it to be managed externally,
-        # maybe with stylix
         # font-family = "JetBrainsMono NerdFont";
+        # theme = "citruszest";
         custom-shader-animation = "always";
         window-decoration = "none";
         window-theme = "ghostty";
         background-opacity = 0.8;
         font-size = 15;
-        theme = "citruszest";
         gtk-tabs-location = "hidden";
         confirm-close-surface = "false";
         app-notifications = "no-clipboard-copy";

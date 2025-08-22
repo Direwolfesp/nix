@@ -20,7 +20,7 @@ in
 
       settings = {
         # Theming
-        theme = "rose_pine";
+        # theme = "rose_pine";
 
         # General settings
         editor = {

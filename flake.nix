@@ -44,9 +44,11 @@
         username = "dire";
         name = "Direwolfesp";
         email = "alvarolg365@gmail.com";
-        shell = "nushell"; # Default shell, same name as in pkgs
-        editor = "helix"; # Default editor, same name as in pkgs
-        term = "ghostty"; # Default terminal, same name as in pkgs
+        shell = "nushell"; # Default shell, same name as in nixpkgs
+        editor = "helix"; # Default editor, same name as in nixpkgs
+        term = "ghostty"; # Default terminal, same name as in nixpkgs
+        web_browser = "firefox"; # Default browser, same name as in nixpkgs
+        theme = "uwunicorn"; # Same name as in ./themes/
       };
 
     in
@@ -74,6 +76,7 @@
           # pass config variables
           inherit systemSettings;
           inherit userSettings;
+          inherit inputs;
         };
       };
     };
