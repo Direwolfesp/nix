@@ -40,15 +40,24 @@
         defaultLocale = "en_US.UTF-8"; # select locale
       };
 
+      pkgs = import nixpkgs { system = systemSettings.system; };
+
       userSettings = {
+        # Core
         username = "dire";
         name = "Direwolfesp";
         email = "alvarolg365@gmail.com";
+
+        # Program preferences
         shell = "nushell"; # Default shell, same name as in nixpkgs
         editor = "helix"; # Default editor, same name as in nixpkgs
         term = "ghostty"; # Default terminal, same name as in nixpkgs
         web_browser = "firefox"; # Default browser, same name as in nixpkgs
+
+        # Looks
         theme = "uwunicorn"; # Same name as in ./themes/
+        font = "JetBrainsMono Nerd Font"; # Font name, same name as in `fc-list : family`
+        fontPkg = pkgs.nerd-fonts.jetbrains-mono; # Font package to use
       };
 
     in
