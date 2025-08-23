@@ -8,6 +8,8 @@
   imports = [
     ./hyprland.nix
     ./dunst.nix
+    ./polkit.nix
+    ./hypridle.nix
   ];
 
   # NOTE: here you can enable/disable each module independently

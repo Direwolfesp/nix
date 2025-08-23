@@ -22,7 +22,6 @@ in
       pkgs.hyprpicker
       pkgs.hyprpaper
       pkgs.hyprlock
-      pkgs.hyprpolkitagent
       pkgs.hypridle
       pkgs.hyprls
       pkgs.hyprshot
@@ -42,13 +41,14 @@ in
     stylix.targets.dunst.enable = false;
     stylix.targets.waybar.enable = false;
 
-    services.cliphist = {
-      enable = true;
-      allowImages = true;
-    };
+    # Some important services
+    services.cliphist.enable = true;
+    services.cliphist.allowImages = true;
 
     wayland.windowManager.hyprland = {
       enable = true;
+
+      systemd.variables = [ "--all" ];
 
       settings = {
         # Monitor config based on host
@@ -172,6 +172,16 @@ in
           # fixes for focusing browser
           "focusonactivate,  initialclass:firefox"
           "syncfullscreen 0, initialclass:firefox"
+        ];
+
+        # Important services at startup
+        exec-once = [
+          "waybar"
+          "hyprpaper"
+          "dunst"
+          "wl-paste --watch cliphist store"
+          "systemctl --user start hyprpolkitagent"
+          "hypridle"
         ];
 
         # Keybindings
