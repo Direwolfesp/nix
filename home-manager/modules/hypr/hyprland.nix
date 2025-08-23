@@ -16,19 +16,19 @@ in
 
   config = lib.mkIf cfg.enable {
     # Extra packages for hyprland
-    home.packages = [
-      pkgs.brightnessctl
-      pkgs.grim
-      pkgs.hyprpicker
-      pkgs.hyprpaper
-      pkgs.hyprlock
-      pkgs.hypridle
-      pkgs.hyprls
-      pkgs.hyprshot
-      pkgs.slurp
-      pkgs.wlogout
-      pkgs.wl-clipboard
-      pkgs.waypaper
+    home.packages = with pkgs; [
+      brightnessctl
+      grim
+      hyprpicker
+      hyprpaper
+      hyprlock
+      hypridle
+      hyprls
+      hyprshot
+      slurp
+      wlogout
+      wl-clipboard
+      waypaper
     ];
 
     stylix.targets.hyprland.hyprpaper.enable = true;

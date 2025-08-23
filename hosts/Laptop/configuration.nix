@@ -60,4 +60,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  hardware.opengl.enable = true;
 }
