@@ -9,6 +9,7 @@ let
 in
 {
   imports = [
+    ./firefox.nix
     ./ghostty.nix
     ./git.nix
     ./gtk.nix
@@ -18,16 +19,17 @@ in
     ./mpv.nix
     ./nixcord.nix
     ./qt.nix
+    ./rofi # loads => ./rofi/default.nix
     ./shell # loads => ./shell/default.nix
     ./sioyek.nix
+    ./waybar # loads => ./waybar/default.nix
     ./xdg.nix
-    ./firefox.nix
   ];
 
   # NOTE: here we can enable/disable each application
   # indepently, maybe based on systemSettings.host
 
-  # Gui
+  # Gui Apps
   config.modules.firefox.enable = true;
   config.modules.mpv.enable = true;
   config.modules.nixcord.enable = true;
@@ -40,8 +42,9 @@ in
   config.modules.jujutsu.enable = true;
   config.modules.xdg.enable = true;
 
-  # Theme
+  # WM and theming related
   config.modules.qt.enable = !useStylix;
   config.modules.gtk.enable = !useStylix;
-
+  config.modules.waybar.enable = true;
+  config.modules.rofi.enable = true;
 }

@@ -61,7 +61,7 @@
         web_browser = "firefox"; # Default browser, same name as in nixpkgs
 
         # Looks
-        theme = "uwunicorn"; # Same name as in ./themes/
+        theme = "nord"; # Same name as in ./themes/
         font = "JetBrainsMono Nerd Font"; # Font name, same name as in `fc-list : family`
         fontPkg = pkgs.nerd-fonts.jetbrains-mono; # Font package to use
       };

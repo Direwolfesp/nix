@@ -24,6 +24,12 @@ in
       hash = bgHash;
     };
 
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 24;
+    };
+
     fonts = {
       monospace = {
         name = userSettings.font;
@@ -31,13 +37,13 @@ in
       };
 
       serif = {
-        name = userSettings.font;
-        package = userSettings.fontPkg;
+        package = pkgs.nerd-fonts.noto;
+        name = "Noto Serif Nerd Font";
       };
 
       sansSerif = {
-        name = userSettings.font;
-        package = userSettings.fontPkg;
+        package = pkgs.nerd-fonts.noto;
+        name = "Noto Sans Nerd Font";
       };
 
       emoji = {

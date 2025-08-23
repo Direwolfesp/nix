@@ -6,7 +6,6 @@
   home.packages = with pkgs; [
     # CLI
     fastfetch
-    fzf
     jq
     fd
     bat
@@ -19,6 +18,9 @@
 
     # GUI
     youtube-music
+    zed-editor
     smile
+
+    pulseaudioFull
   ];
 }

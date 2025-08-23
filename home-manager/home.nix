@@ -39,6 +39,7 @@
       {
         EDITOR = lib.getExe editorPkg;
         VISUAL = lib.getExe editorPkg;
+        TERMINAL = lib.getExe pkgs.ghostty;
         NIXOS_OZONE_WL = "1"; # Enables wayland support in nixpkgs
       };
   };

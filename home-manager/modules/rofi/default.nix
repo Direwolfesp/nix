@@ -1,0 +1,56 @@
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+let
+  cfg = config.modules.rofi;
+in
+{
+  imports = [
+    ./theme.nix
+  ];
+
+  options = {
+    modules.rofi.enable = lib.mkEnableOption "rofi";
+  };
+
+  config = lib.mkIf cfg.enable {
+    home.packages = [ pkgs.rofi-power-menu ];
+    programs.rofi = {
+      enable = true;
+      font = lib.mkForce "JetBrainsMono Nerd Font Mono 12";
+      package = pkgs.rofi-wayland;
+      terminal = config.home.sessionVariables.TERMINAL;
+      extraConfig = {
+        # hover-select = true;
+        # me-select-entry = "";
+        # me-accept-entry = "MousePrimary";
+        modi = [
+          "drun"
+          "run"
+          "filebrowser"
+          "window"
+        ];
+        show-icons = true;
+        display-drun = " Apps";
+        display-run = "󰲌 Run";
+        display-filebrowser = " Files";
+        display-window = " Win";
+        drun-display-format = "{icon} {name}";
+        window-format = "{w} · {c}";
+        # icon-theme = "Papirus-Dark";
+        # icon-theme = "Tela-circle-dracula";
+        kb-row-up = "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+        kb-row-down = "Down,Control+j";
+        kb-accept-entry = "Control+m,Return,KP_Enter";
+        kb-remove-to-eol = "Control+Shift+e";
+        kb-mode-next = "Shift+Right,Control+Tab,Control+l";
+        kb-mode-previous = "Shift+Left,Control+Shift+Tab,Control+h";
+        kb-remove-char-back = "BackSpace";
+        kb-mode-complete = "Control+Shift+l";
+      };
+    };
+  };
+}

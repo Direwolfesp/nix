@@ -10,5 +10,6 @@
     git
     wget
     curl
+    zenity
   ];
 }
