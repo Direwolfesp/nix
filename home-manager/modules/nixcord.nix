@@ -30,10 +30,10 @@ in
         # use out quickCSS
         useQuickCss = true;
 
-        # or use an online theme
-        themeLinks = [
-          "https://refact0r.github.io/system24/theme/system24.theme.css"
-        ];
+        # or use an online theme (for now, let stylix handle it)
+        # themeLinks = [
+        # "https://refact0r.github.io/system24/theme/system24.theme.css"
+        # ];
 
         # Vencord plugins
         plugins = {

@@ -34,9 +34,13 @@ in
 
     stylix.targets.hyprland.hyprpaper.enable = true;
     stylix.targets.hyprlock.enable = true;
-    stylix.targets.waybar.enable = true;
     stylix.targets.zed.enable = true;
     stylix.targets.firefox.enable = true;
+
+    # Disable these
+    stylix.targets.rofi.enable = false;
+    stylix.targets.dunst.enable = false;
+    stylix.targets.waybar.enable = false;
 
     services.cliphist = {
       enable = true;

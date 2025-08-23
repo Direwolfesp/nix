@@ -159,7 +159,6 @@
           ];
         };
         tooltip-format = "{icon} {desc} // {volume}%";
-        # on-click = ''hyprctl dispatch exec "[float; size 960 560]" kitty tmux_pulse.sh'';
         on-click = "pavucontrol -t 3";
       };
       "battery" = {
@@ -237,7 +236,7 @@
       };
       "custom/cava" = {
         format = "{}";
-        exec = "waycava.sh stdout --stb 3";
+        # exec = "waycava.sh stdout --stb 3"; # TODO: fix this
         on-click = "playerctl --player=mpd play-pause";
         on-scroll-down = "playerctl --player=mpd next";
         on-scroll-up = "playerctl --player=mpd previous";
