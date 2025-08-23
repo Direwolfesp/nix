@@ -19,5 +19,6 @@
 
     # GUI
     youtube-music
+    smile
   ];
 }

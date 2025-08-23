@@ -2,10 +2,11 @@
   nix = {
     settings = {
       auto-optimise-store = true;
+      # enable flakes and more features
       experimental-features = [
-        # enable flakes
         "nix-command"
         "flakes"
+        "pipe-operators"
       ];
     };
 
