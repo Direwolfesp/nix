@@ -21,6 +21,8 @@
     zed-editor
     smile
 
+    # audio
     pulseaudioFull
+    playerctl
   ];
 }
