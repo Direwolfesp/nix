@@ -5,6 +5,9 @@
     gdb
     gnumake
     cmake
+    cargo
+    rustc
+    zig
     fzf
     vim
     git

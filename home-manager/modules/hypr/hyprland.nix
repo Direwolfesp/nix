@@ -72,7 +72,7 @@ in
           kb_layout = "es";
           kb_options = "caps:swapescape";
 
-          accel_profiles = "flat";
+          accel_profile = "flat";
           follow_mouse = 1;
           float_switch_override_focus = 0;
           sensitivity = 0;
@@ -119,7 +119,7 @@ in
           fullscreen_opacity = 1.0;
 
           blur = {
-            enable = true;
+            enabled = true;
             size = 6;
             passes = 2;
             new_optimizations = "on";
@@ -128,7 +128,7 @@ in
         };
 
         # Groups
-        group.groupbar.enable = true;
+        group.groupbar.enabled = true;
 
         # Layouts
         dwindle = {
