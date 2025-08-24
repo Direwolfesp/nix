@@ -1,4 +1,7 @@
 {
+  imports = [
+    ./colors.nix
+  ];
   programs.waybar.style = ''
      * {
         border: none;
