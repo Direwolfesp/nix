@@ -9,6 +9,7 @@
     jq
     fd
     bat
+    ouch
     ripgrep
     nvtopPackages.amd
     btop

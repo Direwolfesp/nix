@@ -25,6 +25,7 @@
       ll = "ls -l";
       cd = "z";
       ".." = "cd ..";
+      "tree" = "eza --tree";
     };
 
     # Environment variables to always set at login.
