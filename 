@@ -1,0 +1,62 @@
+[1mdiff --git a/home-manager/modules/default.nix b/home-manager/modules/default.nix[m
+[1mindex cf37b29..e62bb31 100644[m
+[1m--- a/home-manager/modules/default.nix[m
+[1m+++ b/home-manager/modules/default.nix[m
+[36m@@ -24,6 +24,7 @@[m [min[m
+     ./sioyek.nix[m
+     ./waybar # loads => ./waybar/default.nix[m
+     ./xdg.nix[m
+[32m+[m[32m    ./fastfetch_images.nix[m
+   ];[m
+ [m
+   # NOTE: here we can enable/disable each application[m
+[1mdiff --git a/home-manager/modules/fastfetch_images.nix b/home-manager/modules/fastfetch_images.nix[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5d72545[m
+[1m--- /dev/null[m
+[1m+++ b/home-manager/modules/fastfetch_images.nix[m
+[36m@@ -0,0 +1,27 @@[m
+[32m+[m[32m{ pkgs, ... }:[m
+[32m+[m[32mlet[m
+[32m+[m[32m  logoDir = "Pictures/fastfetch_logos";[m
+[32m+[m
+[32m+[m[32m  # Example image[m
+[32m+[m[32m  fubuki = pkgs.fetchurl {[m
+[32m+[m[32m    url = "https://pbs.twimg.com/media/GJDueQOXsAA7DjN?format=jpg&name=medium";[m
+[32m+[m[32m    hash = "sha256-m7175RBqjgsDb+yNyRkR0AnVp9rvG1nrX7HKpqSJLSU=";[m
+[32m+[m[32m  };[m
+[32m+[m
+[32m+[m[32m  # Add more here...[m
+[32m+[m[32m  geass = pkgs.fetchUrl {[m
+[32m+[m[32m    url = "https://i.postimg.cc/FHrV4Y0d/geass.png";[m
+[32m+[m[32m    hash = "sha256-8a36edd1a3feaa3eae55bce5ebbba8c3397ce6ad16c60d74b0428b690ca6dbbe";[m
+[32m+[m[32m  };[m
+[32m+[m[32min[m
+[32m+[m[32m{[m
+[32m+[m[32m  home.file = {[m
+[32m+[m[32m    "${logoDir}/Fubuki.jpg" = {[m
+[32m+[m[32m      source = fubuki;[m
+[32m+[m[32m    };[m
+[32m+[m
+[32m+[m[32m    "${logoDir}/geass.png" = {[m
+[32m+[m[32m      source = geass;[m
+[32m+[m[32m    };[m
+[32m+[m[32m  };[m
+[32m+[m[32m}[m
+[1mdiff --git a/home-manager/modules/shell/fastfetch.nix b/home-manager/modules/shell/fastfetch.nix[m
+[1mindex 9a7f866..7eeb012 100644[m
+[1m--- a/home-manager/modules/shell/fastfetch.nix[m
+[1m+++ b/home-manager/modules/shell/fastfetch.nix[m
+[36m@@ -19,7 +19,7 @@[m [min[m
+       settings = {[m
+         logo = {[m
+           # type = "kitty-icat";[m
+[31m-          source = "${inputs.self.outPath}/themes/fastfetch_images/logo.png";[m
+[32m+[m[32m          source = ''$(find $HOME/Pictures/fastfetch_logos/ -name "*.jpg" -o -name "*.png" | shuf -n 1)'';[m
+           width = 23;[m
+           # height = 18;[m
+         };[m
+[1mdiff --git a/themes/fastfetch_images/logo.png b/themes/fastfetch_images/logo.png[m
+[1mdeleted file mode 100644[m
+[1mindex b4cc639..0000000[m
+Binary files a/themes/fastfetch_images/logo.png and /dev/null differ

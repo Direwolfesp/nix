@@ -38,6 +38,12 @@ in
         fg = "job unfreeze";
         "job killall" = "do { job list | each { |j| job kill $j.id } }";
         cal = "cal --week-start mo";
+
+        # used to create nix SRI hashes for resources
+        get_nix_hash = ''
+          do { |url|
+            nix store prefetch-file --hash-type sha256 --json $url | from json | get hash
+          }'';
       };
     };
 

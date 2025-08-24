@@ -24,6 +24,7 @@ in
     ./sioyek.nix
     ./waybar # loads => ./waybar/default.nix
     ./xdg.nix
+    ./fastfetch_images.nix
   ];
 
   # NOTE: here we can enable/disable each application

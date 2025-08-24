@@ -19,7 +19,7 @@ in
       settings = {
         logo = {
           # type = "kitty-icat";
-          source = "${inputs.self.outPath}/themes/fastfetch_images/logo.png";
+          source = ''$(find $HOME/Pictures/fastfetch_logos/ -name "*.jpg" -o -name "*.png" | shuf -n 1)'';
           width = 23;
           # height = 18;
         };
