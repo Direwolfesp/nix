@@ -17,7 +17,7 @@ let
                     require 'mp.options'
             local opt = {
                 patterns = {
-                    "OP","[Oo]pening$", "^[Oo]pening:", "[Oo]pening [Cc]redits",
+                    "OP","[Oo]pening$", "[Ii]ntro",  "^[Oo]pening:", "[Oo]pening [Cc]redits",
                     "ED","[Ee]nding$", "^[Ee]nding:", "[Ee]nding [Cc]redits",
                     "[Pp]review$",
                 },

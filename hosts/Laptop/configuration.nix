@@ -61,5 +61,6 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  hardware.opengl.enable = true;
+  # TODO: maybe move it to other place
+  hardware.graphics.enable = true;
 }
