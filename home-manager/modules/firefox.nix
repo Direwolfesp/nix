@@ -23,8 +23,11 @@ in
         isDefault = true;
         name = "dire";
 
+        # default search engine
+        search.default = "ddg";
+
         settings = {
-          "browser.startup.homepage" = "about:home";
+          "browser.startup.homepage" = "https://dish.chiren.xyz";
 
           # Disable irritating first-run stuff
           "browser.disableResetPrompt" = true;

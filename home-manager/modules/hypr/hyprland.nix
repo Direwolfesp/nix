@@ -153,6 +153,10 @@ in
           mouse_move_enables_dpms = true;
         };
 
+        cursor = {
+          hide_on_key_press = true;
+        };
+
         # Windowrules
         windowrule = [
           # Pavucontrol floating
@@ -242,8 +246,8 @@ in
           "SUPER CTRL,  W,     exec, waypaper" # Open wallpaper selector
           "SUPER,       SPACE, exec, rofi -show drun -replace -i -terminal ghostty" # Open application launcher
           "SUPER SHIFT, space, exec, rofi -show run -terminal ghostty" # same but run mode
-          # "SUPER,       V,     exec, rofi -show Cliphist -modi Cliphist:cliphist.sh"
           "SUPER,       V,     exec, sh -c 'cliphist list | rofi -dmenu -replace | cliphist decode | wl-copy'"
+          "SUPER SHIFT, b,     exec, pkill waybar; waybar" # reloads waybar
         ];
 
         bindm = [
