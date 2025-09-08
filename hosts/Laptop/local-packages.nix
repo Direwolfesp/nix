@@ -2,6 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     gcc
+    openssl
     gdb
     gnumake
     cmake
