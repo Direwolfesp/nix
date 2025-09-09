@@ -9,6 +9,7 @@
     cargo
     rustc
     zig
+    zls
     fzf
     vim
     git
