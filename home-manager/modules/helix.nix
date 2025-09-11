@@ -15,12 +15,15 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    # disable theming
+    stylix.targets.helix.enable = false;
+
     programs.helix = {
       enable = true;
 
       settings = {
         # Theming
-        # theme = "rose_pine";
+        theme = "beans";
 
         # General settings
         editor = {
