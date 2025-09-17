@@ -16,5 +16,11 @@
       dates = "weekly";
       options = "--delete-older-than 15d";
     };
+
+  };
+
+  documentation = {
+    dev.enable = true;
+    doc.enable = true;
   };
 }

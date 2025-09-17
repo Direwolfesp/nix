@@ -5,6 +5,8 @@
     openssl
     gdb
     gnumake
+    man-pages
+    man-pages-posix
     cmake
     cargo
     rustc
