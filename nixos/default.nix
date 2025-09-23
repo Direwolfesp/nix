@@ -10,5 +10,7 @@
     ./timezone-locale.nix
     ./user.nix
     ./stylix.nix
+    ./binaryninja.nix
+    ./linker.nix
   ];
 }

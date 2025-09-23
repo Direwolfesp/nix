@@ -28,6 +28,12 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Binary ninja
+    binaryninja = {
+      url = "github:jchv/nix-binary-ninja";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -35,6 +41,7 @@
       nixpkgs,
       home-manager,
       stylix,
+      binaryninja,
       ...
     }@inputs:
     let
@@ -74,6 +81,7 @@
         modules = [
           ./hosts/${systemSettings.host}/configuration.nix
           stylix.nixosModules.stylix
+          binaryninja.nixosModules.binaryninja
           home-manager.nixosModules.home-manager
           {
             home-manager.backupFileExtension = "backup";

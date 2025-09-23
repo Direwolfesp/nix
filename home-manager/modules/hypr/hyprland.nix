@@ -19,6 +19,7 @@ in
     home.packages = with pkgs; [
       brightnessctl
       grim
+      grimblast
       hyprpicker
       hyprpaper
       hyprlock
