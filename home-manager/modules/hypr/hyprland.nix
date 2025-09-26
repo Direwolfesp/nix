@@ -29,6 +29,7 @@ in
       slurp
       wlogout
       wl-clipboard
+      tesseract
       waypaper
     ];
 

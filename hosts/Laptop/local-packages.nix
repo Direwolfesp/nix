@@ -5,6 +5,7 @@
     openssl
     gdb
     gnumake
+    clang-tools
     man-pages
     man-pages-posix
     cmake
