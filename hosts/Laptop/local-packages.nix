@@ -6,6 +6,7 @@
     gdb
     gnumake
     clang-tools
+    file
     man-pages
     man-pages-posix
     cmake
