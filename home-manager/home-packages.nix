@@ -21,6 +21,7 @@
     youtube-music
     zed-editor
     smile
+    libreoffice-qt6-fresh
 
     # audio
     pulseaudioFull
