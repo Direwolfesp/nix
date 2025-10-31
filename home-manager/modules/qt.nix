@@ -15,7 +15,7 @@ in
 
   config = lib.mkIf cfg.enable {
     qt = {
-      enable = true;
+      enable = false;
 
       # Change theme
       style = {

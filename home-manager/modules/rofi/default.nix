@@ -21,7 +21,7 @@ in
     programs.rofi = {
       enable = true;
       font = lib.mkForce "JetBrainsMono Nerd Font Mono 12";
-      package = pkgs.rofi-wayland;
+      package = pkgs.rofi;
       terminal = config.home.sessionVariables.TERMINAL;
       extraConfig = {
         # hover-select = true;

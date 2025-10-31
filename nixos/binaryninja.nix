@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.binary-ninja = {
-    enable = true;
+    enable = false;
     package = pkgs.binary-ninja-free-wayland;
   };
 }

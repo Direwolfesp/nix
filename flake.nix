@@ -3,17 +3,17 @@
 
   inputs = {
     # NixOS official package source
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # i want to try unstable
 
     # Home-manager oficial repo
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Stylix
     stylix = {
-      url = "github:nix-community/stylix/release-25.05";
+      url = "github:nix-community/stylix/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -68,7 +68,7 @@
         web_browser = "firefox"; # Default browser, same name as in nixpkgs
 
         # Looks
-        theme = "spaceduck"; # Same name as in ./themes/
+        theme = "uwunicorn"; # Same name as in ./themes/
         font = "JetBrainsMono Nerd Font"; # Font name, same name as in `fc-list : family`
         fontPkg = pkgs.nerd-fonts.jetbrains-mono; # Font package to use
       };

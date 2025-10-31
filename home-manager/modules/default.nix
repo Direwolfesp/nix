@@ -44,7 +44,7 @@ in
   config.modules.xdg.enable = true;
 
   # WM and theming related
-  config.modules.qt.enable = !useStylix;
+  config.modules.qt.enable = false;
   config.modules.gtk.enable = !useStylix;
   config.modules.waybar.enable = true;
   config.modules.rofi.enable = true;

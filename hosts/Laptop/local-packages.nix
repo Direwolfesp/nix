@@ -5,6 +5,7 @@
     openssl
     gdb
     gnumake
+    valgrind
     clang-tools
     file
     man-pages
