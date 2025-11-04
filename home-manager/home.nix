@@ -21,6 +21,7 @@
     shellAliases = {
       zrf = "zellij run -f --"; # zellij run in floating mode
       zbr = "zig build run";
+      zbt = "zig build test";
       zb = "zig build";
       zlj = "zellij";
       ll = "ls -l";
