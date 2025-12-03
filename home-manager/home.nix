@@ -28,6 +28,7 @@
       cd = "z";
       ".." = "cd ..";
       "tree" = "eza --tree";
+      cat = "bat";
     };
 
     # Environment variables to always set at login.

@@ -28,7 +28,7 @@ in
         # General settings
         editor = {
           line-number = "relative"; # show relative number
-          bufferline = "multiple"; # when to show open buffers [never, always, multiple]
+          bufferline = "never"; # when to show open buffers [never, always, multiple]
           cursorline = false; # highlight the line of the cursor
           color-modes = false; # colored bottom modal line
           end-of-line-diagnostics = "hint"; # errors under the line

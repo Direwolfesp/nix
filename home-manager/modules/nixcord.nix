@@ -31,9 +31,9 @@ in
         useQuickCss = true;
 
         # or use an online theme (for now, let stylix handle it)
-        # themeLinks = [
-        # "https://refact0r.github.io/system24/theme/system24.theme.css"
-        # ];
+        themeLinks = [
+          "https://refact0r.github.io/midnight-discord/build/midnight.css"
+        ];
 
         # Vencord plugins
         plugins = {

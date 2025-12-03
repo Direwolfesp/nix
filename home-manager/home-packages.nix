@@ -16,8 +16,10 @@
     tokei
     tealdeer
     eza
+    nh
 
     # GUI
+    xournalpp
     youtube-music
     zed-editor
     smile
