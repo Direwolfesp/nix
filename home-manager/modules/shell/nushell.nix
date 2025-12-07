@@ -21,6 +21,8 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    stylix.targets.nushell.enable = false;
+
     programs.nushell = {
       enable = true;
 
