@@ -25,7 +25,7 @@ in
         background-opacity = 0.8;
         font-size = 15;
         gtk-tabs-location = "hidden";
-        gtk-single-instance = "true";
+        gtk-single-instance = "false";
         confirm-close-surface = "false";
         app-notifications = "no-clipboard-copy";
 

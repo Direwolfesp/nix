@@ -129,7 +129,8 @@ in
 
         # Animations
         animations = {
-          enabled = true;
+          # disable them in Laptop only
+          enabled = if systemSettings.host == "Laptop" then false else true;
 
           # Animation curves
           bezier = [
