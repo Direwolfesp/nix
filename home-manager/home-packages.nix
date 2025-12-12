@@ -17,6 +17,7 @@
     tealdeer
     eza
     nh
+    socat
 
     # GUI
     xournalpp
