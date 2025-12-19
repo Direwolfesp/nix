@@ -23,6 +23,18 @@ in
       enableBashIntegration = true;
       shellWrapperName = "y";
 
+      # open a video in mpv forcing kitty protocol, useful for previews ssh
+      keymap.mgr.prepend_keymap = [
+        {
+          on = [
+            "O"
+            "v"
+          ];
+          run = "shell 'mpv --vo=kitty $@' --block";
+          desc = "Open selected files in MPV using kitty graphics protocol";
+        }
+      ];
+
       plugins = {
         # See https://mynixos.com/nixpkgs/packages/yaziPlugins
       };
