@@ -18,6 +18,7 @@
     eza
     nh
     socat
+    dust
 
     # GUI
     xournalpp
