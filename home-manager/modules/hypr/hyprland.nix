@@ -203,22 +203,13 @@ in
         # Windowrules
         windowrule = [
           # Pavucontrol floating
-          "float,        class:(.*org.pulseaudio.pavucontrol.*)"
-          "size 700 600, class:(.*org.pulseaudio.pavucontrol.*)"
-          "center,       class:(.*org.pulseaudio.pavucontrol.*)"
-
+          "float on, size 700 600, center on, match:class (.*org.pulseaudio.pavucontrol.*)"
           # Waypaper floating
-          "float,        class:(.*waypaper.*)"
-          "size 800 700, class:(.*waypaper.*)"
-          "center,       class:(.*waypaper.*)"
-
+          "float on, size 700 600, center on, match:class (.*waypaper.*)"
           # float and resize emote picker
-          "float,        initialclass:^(it.mijorus.smile)$"
-          "size 805 500, initialclass:^(it.mijorus.smile)$"
-
+          "float on, size 700 600, center on, match:initial_class ^(it.mijorus.smile)$"
           # fixes for focusing browser
-          "focusonactivate,  initialclass:firefox"
-          "syncfullscreen 0, initialclass:firefox"
+          "focus_on_activate on, match:initial_class firefox"
         ];
 
         # Important services at startup
