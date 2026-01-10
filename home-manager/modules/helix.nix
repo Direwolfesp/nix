@@ -27,6 +27,7 @@ in
 
         # General settings
         editor = {
+          true-color = true;
           line-number = "relative"; # show relative number
           bufferline = "never"; # when to show open buffers [never, always, multiple]
           cursorline = false; # highlight the line of the cursor
