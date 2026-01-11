@@ -20,6 +20,10 @@ in
         "next_page" = "J";
         "previous_page" = "K";
       };
+
+      config = {
+        "should_launch_new_window" = "1";
+      };
     };
   };
 }

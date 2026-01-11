@@ -261,7 +261,7 @@ in
           "SUPER,      E,       exec, ghostty -e yazi" # Open file browser
 
           "SUPER,       m,   exec, jellyfinmediaplayer" # m media
-          "SUPER SHIFT, m,   exec, youtube-music" # M music
+          "SUPER SHIFT, m,   exec, pear-desktop" # M music
           "SUPER,       d,   exec, discord" # d discord
           "SUPER SHIFT, e,   exec, ghostty -e yazi" # opens yazi
           "SUPER,       c,   exec, zeditor" # C editor

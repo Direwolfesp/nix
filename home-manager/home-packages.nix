@@ -22,7 +22,7 @@
 
     # GUI
     xournalpp
-    youtube-music
+    pear-desktop
     zed-editor
     smile
     libreoffice-qt6-fresh

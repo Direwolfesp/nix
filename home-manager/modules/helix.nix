@@ -23,7 +23,7 @@ in
 
       settings = {
         # Theming
-        theme = "beans";
+        theme = "rose_pine";
 
         # General settings
         editor = {
