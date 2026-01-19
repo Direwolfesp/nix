@@ -26,6 +26,7 @@
     zed-editor
     smile
     libreoffice-qt6-fresh
+    jellyfin-desktop
 
     # audio
     pulseaudioFull
