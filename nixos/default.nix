@@ -5,6 +5,7 @@
     ./boot.nix
     ./fonts.nix
     ./hyprland.nix
+    ./dms-shell.nix
     ./networking.nix
     ./nix.nix
     ./timezone-locale.nix

@@ -33,8 +33,8 @@ in
       waypaper
     ];
 
-    stylix.targets.hyprland.hyprpaper.enable = true;
-    stylix.targets.hyprlock.enable = true;
+    stylix.targets.hyprland.hyprpaper.enable = false;
+    stylix.targets.hyprlock.enable = false;
     stylix.targets.zed.enable = true;
     stylix.targets.firefox.enable = true;
 
@@ -215,11 +215,11 @@ in
         # Important services at startup
         exec-once = [
           "waybar"
-          "hyprpaper"
+          # "hyprpaper"
           "dunst"
           "wl-paste --watch cliphist store"
-          "systemctl --user start hyprpolkitagent"
-          "hypridle"
+          # "systemctl --user start hyprpolkitagent"
+          # "hypridle"
         ];
 
         # Keybindings

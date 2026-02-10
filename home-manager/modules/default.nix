@@ -46,6 +46,6 @@ in
   # WM and theming related
   config.modules.qt.enable = false;
   config.modules.gtk.enable = !useStylix;
-  config.modules.waybar.enable = true;
+  config.modules.waybar.enable = false;
   config.modules.rofi.enable = true;
 }
