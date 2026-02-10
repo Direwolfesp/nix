@@ -14,20 +14,22 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    stylix.targets.ghostty.enable = false;
     programs.ghostty = {
       enable = true;
       settings = {
         # font-family = "JetBrainsMono NerdFont";
-        # theme = "citruszest";
+        theme = "Citruszest";
+        app-notifications = "no-clipboard-copy";
+        background-opacity = 0.9;
+        confirm-close-surface = "false";
         custom-shader-animation = "always";
+        font-size = 15;
+        foreground = "ffffff";
+        gtk-single-instance = "false";
+        gtk-tabs-location = "hidden";
         window-decoration = "none";
         window-theme = "ghostty";
-        background-opacity = 0.8;
-        font-size = 15;
-        gtk-tabs-location = "hidden";
-        gtk-single-instance = "false";
-        confirm-close-surface = "false";
-        app-notifications = "no-clipboard-copy";
 
         keybind = [
           # close splits
