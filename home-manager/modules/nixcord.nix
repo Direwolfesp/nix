@@ -14,7 +14,7 @@ in
   };
 
   #-------------------------------------------------#
-  # Docs here: https://kaylorben.github.io/nixcord/ #
+  # Docs here: https://flameflag.github.io/nixcord/ #
   #-------------------------------------------------#
   config = lib.mkIf cfg.enable {
     programs.nixcord = {

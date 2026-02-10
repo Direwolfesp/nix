@@ -214,23 +214,24 @@ in
 
         # Important services at startup
         exec-once = [
-          "waybar"
+          # I dont need these with dms
+          # "waybar"
           # "hyprpaper"
-          "dunst"
-          "wl-paste --watch cliphist store"
+          # "dunst"
           # "systemctl --user start hyprpolkitagent"
           # "hypridle"
+          "wl-paste --watch cliphist store"
         ];
 
         # Keybindings
         bind = lib.flatten [
           # Workspaces
           (
-            lib.map (n: [
+            lib.range 1 9
+            |> lib.map (n: [
               "SUPER      , ${toString n}, workspace            , ${toString n}"
               "SUPER+SHIFT, ${toString n}, movetoworkspacesilent, ${toString n}"
             ])
-            <| lib.range 1 9
           )
           "Alt-L, Tab, swapactiveworkspaces, 0 1" # Swap workspaces
           "SUPER, Q,   killactive" # Kill active window
@@ -274,14 +275,22 @@ in
           "SUPER,       tab, togglespecialworkspace" # special workspace
           "SUPER,       z,   movetoworkspace, special" # moves to hidden
 
-          # Actions
-          "SUPER CTRL,  Q,     exec, wlogout" # Start wlogout
-          "SUPER SHIFT, W,     exec, waypaper --random" # Change the wallpaper
-          "SUPER CTRL,  W,     exec, waypaper" # Open wallpaper selector
-          "SUPER,       SPACE, exec, rofi -show drun -replace -i -terminal ghostty" # Open application launcher
-          "SUPER SHIFT, space, exec, rofi -show run -terminal ghostty" # same but run mode
-          "SUPER,       V,     exec, sh -c 'cliphist list | rofi -dmenu -replace | cliphist decode | wl-copy'"
-          "SUPER SHIFT, b,     exec, pkill waybar; waybar" # reloads waybar
+          # Actions (deprecated in favor of DMS)
+          # "SUPER CTRL,  Q,     exec, wlogout" # Start wlogout
+          # "SUPER SHIFT, W,     exec, waypaper --random" # Change the wallpaper
+          # "SUPER CTRL,  W,     exec, waypaper" # Open wallpaper selector
+          # "SUPER,       SPACE, exec, rofi -show drun -replace -i -terminal ghostty" # Open application launcher
+          # "SUPER SHIFT, space, exec, rofi -show run -terminal ghostty" # same but run mode
+          # "SUPER,       V,     exec, sh -c 'cliphist list | rofi -dmenu -replace | cliphist decode | wl-copy'"
+          # "SUPER SHIFT, b,     exec, pkill waybar; waybar" # reloads waybar
+
+          # DMS Actions
+          "SUPER CTRL, W, exec, dms ipc call dankdash  wallpaper" # Open wallpaper selector
+          "SUPER CTRL, Q, exec, dms ipc call powermenu toggle" # power menu
+          "SUPER,  space, exec, dms ipc call spotlight toggle" # Open application launcher
+          "SUPER,      V, exec, dms ipc call clipboard toggle" # Open clipboard manager
+          "SUPER,  comma, exec, dms ipc call settings  toggle" # Open settings
+
         ];
 
         bindm = [
@@ -300,7 +309,7 @@ in
           ", XF86AudioPrev,         exec, playerctl previous" # Audio previous
           ", XF86AudioMicMute,      exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle" # Toggle microphone
           ", XF86Calculator,        exec, qalculate-gtk" # Open calculator
-          ", XF86Lock,              exec, hyprlock" # Open screenlock
+          ", XF86Lock,              exec, dms ipc call lock lock" # Open screenlock
         ];
 
         binde = [
