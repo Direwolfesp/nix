@@ -3,6 +3,7 @@
   imports = [
     ./audio.nix
     ./boot.nix
+    ./steam.nix
     ./fonts.nix
     ./hyprland.nix
     ./dms-shell.nix
