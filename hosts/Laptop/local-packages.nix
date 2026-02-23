@@ -13,6 +13,8 @@
     cmake
     cargo
     rustc
+    rust-analyzer
+    rustfmt
     zig
     zls
     fzf
