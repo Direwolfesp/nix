@@ -19,6 +19,7 @@
     nh
     socat
     dust
+    libqalculate
 
     # GUI
     xournalpp
