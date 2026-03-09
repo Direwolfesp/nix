@@ -24,7 +24,7 @@ in
         background-opacity = 0.9;
         confirm-close-surface = "false";
         custom-shader-animation = "always";
-        font-size = 15;
+        font-size = 14;
         foreground = "ffffff";
         gtk-single-instance = "false";
         gtk-tabs-location = "hidden";
