@@ -20,6 +20,7 @@
     socat
     dust
     libqalculate
+    zellij
 
     # GUI
     xournalpp
