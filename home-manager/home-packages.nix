@@ -21,6 +21,7 @@
     dust
     libqalculate
     zellij
+    lazygit
 
     # GUI
     xournalpp
