@@ -50,7 +50,7 @@ in
         # Man page fuzzy picker
         m = ''
          do {
-          let input = man -k . | lines | input list --fuzzy
+          let input = man -k . | decode | lines | input list --fuzzy
           if ($input | is-empty) {
             return
           }
