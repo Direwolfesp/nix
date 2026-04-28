@@ -9,7 +9,7 @@ let
   cfg = config.modules.xdg;
 
   # Default apps .desktop (user packages are in /etc/profiles/per-user/<user>/share/applications)
-  # TODO: syncronize it with userSettings
+  # TODO: synchronize it with userSettings
   browser = "firefox.desktop";
   editor = "Helix.desktop";
   video = "mpv.desktop";
@@ -27,20 +27,26 @@ in
     xdg = {
       enable = true;
 
-      # XDG Directories
+      # XDG data directories
       cacheHome = "${homeDir}/.cache";
       configHome = "${homeDir}/.config";
       dataHome = "${homeDir}/.local/share";
       stateHome = "${homeDir}/.local/state";
-      userDirs.desktop = "${homeDir}/Desktop";
-      userDirs.documents = "${homeDir}/Documents";
-      userDirs.download = "${homeDir}/Downloads";
-      userDirs.music = "${homeDir}/Music";
-      userDirs.pictures = "${homeDir}/Pictures";
-      userDirs.publicShare = "${homeDir}/Public";
-      userDirs.templates = "${homeDir}/Templates";
-      userDirs.videos = "${homeDir}/Videos";
 
+      # XDG user directories
+      userDirs = {
+        desktop = "${homeDir}/Desktop";
+        documents = "${homeDir}/Documents";
+        download = "${homeDir}/Downloads";
+        music = "${homeDir}/Music";
+        pictures = "${homeDir}/Pictures";
+        publicShare = "${homeDir}/Public";
+        templates = "${homeDir}/Templates";
+        videos = "${homeDir}/Videos";
+        projects = "${homeDir}/Projects";
+      };
+
+      # xdg desktop portal
       portal = {
         enable = true;
         extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];

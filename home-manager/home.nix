@@ -8,7 +8,7 @@
 }:
 {
   imports = [
-    ./modules # loads => ./modules/default.nix
+    ./modules
     ./home-packages.nix
   ];
 
