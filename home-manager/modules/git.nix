@@ -17,8 +17,14 @@ in
   config = lib.mkIf cfg.enable {
     programs.git = {
       enable = true;
-      userName = userSettings.name;
-      userEmail = userSettings.email;
+
+      settings = {
+        user = {
+          name = userSettings.name;
+          email = userSettings.email;
+        };
+      };
+
     };
   };
 }

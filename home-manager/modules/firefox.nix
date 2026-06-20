@@ -18,6 +18,8 @@ in
     programs.firefox = {
       enable = true;
 
+      configPath = "${config.xdg.configHome}/mozilla/firefox";
+
       profiles.dire = {
         id = 0;
         isDefault = true;

@@ -175,7 +175,6 @@ in
 
         # Layouts
         dwindle = {
-          pseudotile = true;
           preserve_split = true;
         };
 
@@ -226,18 +225,15 @@ in
         # Keybindings
         bind = lib.flatten [
           # Workspaces
-          (
-            lib.range 1 9
-            |> lib.map (n: [
-              "SUPER      , ${toString n}, workspace            , ${toString n}"
-              "SUPER+SHIFT, ${toString n}, movetoworkspacesilent, ${toString n}"
-            ])
-          )
+          (lib.map (n: [
+            "SUPER      , ${toString n}, workspace            , ${toString n}"
+            "SUPER+SHIFT, ${toString n}, movetoworkspacesilent, ${toString n}"
+          ]) (lib.range 1 9))
           "Alt-L, Tab, swapactiveworkspaces, 0 1" # Swap workspaces
           "SUPER, Q,   killactive" # Kill active window
           "SUPER, F,   fullscreen, 2" # Set active window to fullscreen
           "SUPER, T,   togglefloating" # Toggle active windows into floating mode
-          "SUPER, I,   togglesplit" # Toggle split
+          "SUPER, I,   layoutmsg, togglesplit" # Toggle split
 
           "SUPER, G, togglegroup" # Toggle window group
           "Alt_L, l, changegroupactive, f" # changes window forward inside a group
